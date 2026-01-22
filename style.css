@@ -778,6 +778,179 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* ===== ФОРМА ЗАХВАТА КОНТАКТА ===== */
+.contact-form-section {
+    margin: 40px 0;
+    animation: fadeIn 0.8s ease;
+}
+
+.contact-form-container {
+    background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid #4299e1;
+    box-shadow: 0 15px 35px rgba(66, 153, 225, 0.2);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.form-header h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+}
+
+.form-header p {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contactForm {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2d3748;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+}
+
+.form-group input {
+    padding: 18px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.form-group input:focus {
+    border-color: #4299e1;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.form-benefits {
+    background: #f0fff4;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border-left: 5px solid #38a169;
+}
+
+.form-benefits p {
+    font-weight: 700;
+    color: #22543d;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.form-benefits ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-benefits li {
+    padding: 10px 0;
+    color: #2d3748;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.form-benefits li i {
+    color: #38a169;
+    margin-top: 4px;
+}
+
+.form-privacy {
+    background: #fffaf0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #744210;
+    font-size: 0.95rem;
+    border: 1px solid #fbd38d;
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #38a169, #2f855a);
+    color: white;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(56, 161, 105, 0.4);
+}
+
+.btn-skip {
+    background: transparent;
+    color: #718096;
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px dashed #cbd5e0;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.btn-skip:hover {
+    background: #f7fafc;
+    color: #4a5568;
+}
+
 /* ===== ПОДВАЛ ===== */
 .unified-footer {
     background: #f8fafc;
@@ -1136,5 +1309,16 @@ body {
         padding: 16px 20px;
         font-size: 1rem;
         min-width: unset;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
