@@ -122,6 +122,51 @@
                 </div>
             </div>
 
+            <!-- ФОРМА ЗАХВАТА КОНТАКТА -->
+            <div class="contact-form-section" id="contactFormSection" style="display: none;">
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2><i class="fas fa-user-check"></i> Персональный расчет готов!</h2>
+                        <p>Чтобы получить <strong>детализированный PDF-отчет</strong> с пошаговым планом и списком документов, оставьте ваши контакты. С вами свяжется юрист <strong>Михаил</strong> для бесплатного разбора.</p>
+                    </div>
+
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="userName"><i class="fas fa-user"></i> Ваше имя</label>
+                                <input type="text" id="userName" placeholder="Например: Алексей" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="userPhone"><i class="fas fa-mobile-alt"></i> Номер телефона</label>
+                                <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__" required>
+                            </div>
+                        </div>
+
+                        <div class="form-benefits">
+                            <p><strong>Что вы получите сразу после отправки:</strong></p>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> <strong>PDF-отчет</strong> «Дорожная карта к списанию долгов» на вашу почту/Telegram.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Список документов</strong>, которые нужно подготовить для вашего случая.</li>
+                                <li><i class="fas fa-check-circle"></i> <strong>Бесплатный 15-минутный разбор</strong> с юристом Михаилом.</li>
+                            </ul>
+                        </div>
+
+                        <div class="form-privacy">
+                            <p><i class="fas fa-lock"></i> Ваши данные конфиденциальны. Отправляя форму, вы соглашаетесь на обработку данных для связи.</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-submit" id="submitContactBtn">
+                                <i class="fas fa-file-pdf"></i> Получить мой персональный PDF-отчет
+                            </button>
+                            <button type="button" class="btn btn-skip" id="skipContactBtn">
+                                Показать общие результаты (без отчета)
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <!-- Результаты расчета -->
             <div class="results-section" id="resultsSection">
                 <div class="results-header">
@@ -182,7 +227,7 @@
                 </div>
             </div>
 
-            <!-- Блок отчета (изначально скрыт) -->
+            <!-- Блок отчета -->
             <div class="report-section" id="reportSection" style="display: none;">
                 <div class="report-header">
                     <h2><i class="fas fa-file-pdf"></i> Отчет по вашим долгам</h2>
@@ -196,7 +241,7 @@
                 </div>
                 
                 <div class="report-actions">
-                    <button class="btn btn-telegram" onclick="window.open('https://t.me/ArcadConsult_bot', '_blank')">
+                    <button class="btn btn-telegram" onclick="window.open('https://t.me/BankrotHelperBot', '_blank')">
                         <i class="fab fa-telegram"></i> Telegram
                     </button>
                     <button class="btn btn-print" onclick="window.print()">
@@ -222,7 +267,7 @@
                         <div class="offer-price">Бесплатно</div>
                         
                         <div class="contact-options">
-                            <button class="offer-btn btn-primary" onclick="window.open('https://t.me/ArcadConsult_bot', '_blank')">
+                            <button class="offer-btn btn-primary" onclick="window.open('https://t.me/BankrotHelperBot', '_blank')">
                                 <i class="fab fa-telegram"></i> Telegram
                             </button>
                             <div class="phone-option">
@@ -239,7 +284,7 @@
                         <h3>Стратегическая сессия</h3>
                         <p class="offer-description">Полный анализ + план действий (60 минут) с детальным разбором</p>
                         <div class="offer-price">5 000 ₽</div>
-                        <button class="offer-btn btn-secondary" onclick="window.open('https://t.me/ArcadConsult_bot', '_blank')">
+                        <button class="offer-btn btn-secondary" onclick="window.open('https://t.me/BankrotHelperBot', '_blank')">
                             <i class="fas fa-calendar-check"></i> Забронировать
                         </button>
                     </div>
@@ -277,8 +322,8 @@
                         </div>
                         <div class="trust-text">
                             <strong>Бесплатный вопрос юристу:</strong> 
-                            <a href="https://t.me/ArcadConsult_bot" class="telegram-link" target="_blank">
-                                @ArcadConsult_bot
+                            <a href="https://t.me/BankrotHelperBot" class="telegram-link" target="_blank">
+                                @BankrotHelperBot
                             </a>
                         </div>
                     </div>
@@ -324,7 +369,7 @@
                         </div>
                         <h4>Поделиться ботом</h4>
                         <p>Помогите друзьям узнать о своих возможностях по списанию долгов</p>
-                        <a href="https://t.me/share/url?url=https://t.me/ArcadConsult_bot&text=Бесплатный калькулятор долгов от юристов по банкротству - рассчитай свою выгоду!" 
+                        <a href="https://t.me/share/url?url=https://t.me/BankrotHelperBot&text=Бесплатный калькулятор долгов от юристов по банкротству - рассчитай свою выгоду!" 
                            class="action-btn share" target="_blank">
                             <i class="fas fa-share-alt"></i> Поделиться в Telegram
                         </a>
@@ -334,14 +379,14 @@
             
             <div class="footer-base">
                 <div class="copyright">
-                    <p><i class="far fa-copyright"></i> 2025 Калькулятор долгов. Все права защищены.</p>
+                    <p><i class="far fa-copyright"></i> 2026 Калькулятор долгов. Все права защищены.</p>
                     <p class="disclaimer">Расчеты носят информационный характер. Для точного анализа требуется консультация юриста.</p>
                 </div>
                 <div class="footer-links">
-                    <a href="https://t.me/ArcadConsult_bot" target="_blank">Телеграм-бот</a>
+                    <a href="https://t.me/BankrotHelperBot" target="_blank">Телеграм-бот</a>
                     <a href="tel:+79281068699">Телефон</a>
                     <a href="https://t.me/Arcad_help" target="_blank">Канал</a>
-                    <a href="#" onclick="alert('Политика конфиденциальности доступна по запросу в боте @ArcadConsult_bot')">Конфиденциальность</a>
+                    <a href="#" onclick="alert('Политика конфиденциальности доступна по запросу в боте @BankrotHelperBot')">Конфиденциальность</a>
                 </div>
             </div>
         </footer>
