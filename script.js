@@ -1,6 +1,6 @@
 // Конфигурация
 const METRIKA_ID = 106284317;
-const TELEGRAM_BOT_TOKEN = '8368573166:AAF9M_fXrL8jKeVU9Zn_Qwxwjj40jtCCUYk';
+const TELEGRAM_BOT_TOKEN = '8368573166:AAF9M_fXrl8jKeVU9Zn_Qwxwjj4OjtCCUYk';
 const TELEGRAM_CHAT_ID = '629511749';
 
 // Основные элементы
@@ -862,3 +862,4 @@ window.showSavedLeads = function() {
         console.log('📋 Последняя заявка:', lastLead);
     }
 };
+
