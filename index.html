@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аномальный разбор | Массажист Михаил</title>
+    <title>Аномальный массаж | Михаил в Шахтах</title>
 
-    <!-- Яндекс.Метрика (твой код) -->
+    <!-- Яндекс.Метрика -->
     <script type="text/javascript">
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();
@@ -21,219 +21,201 @@
        });
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/106284317" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Яндекс.Метрика -->
 
+    <!-- Шрифты и иконки -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<!-- Верхняя панель -->
+<div class="top-bar">
     <div class="container">
-        <!-- Шапка -->
-        <header class="main-header">
-            <div class="header-content">
-                <h1><i class="fas fa-spine"></i> Аномальный разбор</h1>
-                <p class="subtitle">3 шага: ответь на вопросы → получи упражнения для снятия боли → запишись на массаж к Михаилу.</p>
-            </div>
-        </header>
-
-        <!-- Пояснение -->
-        <div class="disclaimer-box">
-            <i class="fas fa-exclamation-circle"></i>
-            <p>Это предварительная самодиагностика. Точный диагноз может поставить только специалист при личном осмотре.</p>
+        <div class="logo">
+            Аномальный массаж <span>Михаил</span>
         </div>
-
-        <!-- Основной блок -->
-        <main class="calculator-section">
-            <div class="section-header">
-                <h2><i class="fas fa-notes-medical"></i> Что болит?</h2>
-                <p class="section-description">Ответь на 3 вопроса, чтобы я понял твою ситуацию</p>
-            </div>
-
-            <!-- Блок вопросов -->
-            <div class="symptom-input-form" id="questionBlock">
-                <div class="question" id="question1">
-                    <h3><i class="fas fa-question-circle"></i> Вопрос 1 из 3</h3>
-                    <p class="question-text">Где ты чувствуешь дискомфорт?</p>
-                    <div class="options-grid">
-                        <label class="option-card">
-                            <input type="radio" name="q1" value="Шея" checked>
-                            <i class="fas fa-user-injured"></i>
-                            <span>Шея (трудно повернуть)</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q1" value="Плечи">
-                            <i class="fas fa-user-md"></i>
-                            <span>Плечи и воротниковая зона (каменные)</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q1" value="Поясница">
-                            <i class="fas fa-user-nurse"></i>
-                            <span>Поясница (ноет)</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q1" value="Лопатки">
-                            <i class="fas fa-user"></i>
-                            <span>Между лопатками (жжёт)</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q1" value="Усталость">
-                            <i class="fas fa-smile"></i>
-                            <span>Общая усталость спины</span>
-                        </label>
-                    </div>
-                    <button class="btn btn-next" id="nextToQ2"><i class="fas fa-arrow-right"></i> Дальше</button>
-                </div>
-
-                <div class="question" id="question2" style="display: none;">
-                    <h3><i class="fas fa-question-circle"></i> Вопрос 2 из 3</h3>
-                    <p class="question-text">Как давно это беспокоит?</p>
-                    <div class="options-grid">
-                        <label class="option-card">
-                            <input type="radio" name="q2" value="Несколько дней" checked>
-                            <i class="fas fa-calendar-day"></i>
-                            <span>Несколько дней</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q2" value="Несколько недель">
-                            <i class="fas fa-calendar-week"></i>
-                            <span>Несколько недель</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q2" value="Несколько месяцев">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>Несколько месяцев</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q2" value="Годами">
-                            <i class="fas fa-hourglass-half"></i>
-                            <span>Годами</span>
-                        </label>
-                    </div>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn btn-back" id="backToQ1"><i class="fas fa-arrow-left"></i> Назад</button>
-                        <button class="btn btn-next" id="nextToQ3"><i class="fas fa-arrow-right"></i> Дальше</button>
-                    </div>
-                </div>
-
-                <div class="question" id="question3" style="display: none;">
-                    <h3><i class="fas fa-question-circle"></i> Вопрос 3 из 3</h3>
-                    <p class="question-text">Чем ты занимаешься большую часть дня?</p>
-                    <div class="options-grid">
-                        <label class="option-card">
-                            <input type="radio" name="q3" value="Офис" checked>
-                            <i class="fas fa-laptop"></i>
-                            <span>Сижу за компьютером</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q3" value="Физический труд">
-                            <i class="fas fa-hammer"></i>
-                            <span>На ногах / физический труд</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q3" value="Водитель">
-                            <i class="fas fa-car"></i>
-                            <span>За рулём</span>
-                        </label>
-                        <label class="option-card">
-                            <input type="radio" name="q3" value="Смешанный">
-                            <i class="fas fa-random"></i>
-                            <span>Комбинирую</span>
-                        </label>
-                    </div>
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn btn-back" id="backToQ2"><i class="fas fa-arrow-left"></i> Назад</button>
-                        <button class="btn btn-analyze" id="getResultBtn"><i class="fas fa-stethoscope"></i> Получить разбор</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Блок результата (изначально скрыт) -->
-            <div class="result-section" id="resultBlock" style="display: none;">
-                <div class="result-header">
-                    <i class="fas fa-clipboard-check"></i>
-                    <h2>[Имя], вот что показал разбор</h2>
-                </div>
-
-                <div class="result-card diagnosis-card">
-                    <h3><i class="fas fa-diagnoses"></i> Предварительный диагноз</h3>
-                    <p id="diagnosisText">Похоже на спазм трапециевидной мышцы. Это частая проблема у тех, кто много сидит за компьютером. Если не обращать внимания, может перейти в хроническую боль.</p>
-                </div>
-
-                <div class="result-card exercise-card">
-                    <h3><i class="fas fa-dumbbell"></i> Помоги себе сам (3 упражнения)</h3>
-                    <div class="exercise-item">
-                        <span class="exercise-number">1</span>
-                        <div class="exercise-text">
-                            <strong>Наклоны головы с помощью руки</strong>
-                            <p>Сядь ровно, положи правую руку на левое ухо. Медленно наклоняй голову вправо, помогая рукой, пока не почувствуешь натяжение слева. Задержись на 30 сек. Повтори в другую сторону.</p>
-                        </div>
-                    </div>
-                    <div class="exercise-item">
-                        <span class="exercise-number">2</span>
-                        <div class="exercise-text">
-                            <strong>Пожимания плечами</strong>
-                            <p>На вдохе подними плечи как можно выше к ушам, замри на 5 секунд. На выдохе резко опусти вниз. Повтори 10 раз.</p>
-                        </div>
-                    </div>
-                    <div class="exercise-item">
-                        <span class="exercise-number">3</span>
-                        <div class="exercise-text">
-                            <strong>«Замок» за спиной</strong>
-                            <p>Заведи одну руку за спину сверху, другую снизу. Попробуй сцепить пальцы в замок. Задержись на 20 сек. Поменяй руки.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="result-card cta-card">
-                    <h3><i class="fas fa-hand-holding-heart"></i> Нужна глубокая проработка? Я рядом</h3>
-                    <p>Если боль не проходит или ты хочешь качественно проработать проблему — приходи на массаж. Я сделаю так, чтобы ты забыл о боли надолго.</p>
-                    
-                    <div class="price-block">
-                        <h4>Мои услуги</h4>
-                        <ul>
-                            <li><span>Массаж спины (60 мин)</span> <strong>1000 ₽</strong></li>
-                            <li><span>Общий массаж (90 мин)</span> <strong>2000 ₽</strong></li>
-                            <li><span>Лимфодренажный / Антицеллюлитный</span> <strong>от 2500 ₽</strong></li>
-                            <li><span>Выезд</span> <strong>обговаривается</strong></li>
-                        </ul>
-                    </div>
-
-                    <div class="contacts-block">
-                        <h4>Свяжись со мной</h4>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i> <a href="tel:+79281068699">+7 (928) 106-86-99</a> (звонок/WhatsApp)
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-telegram"></i> <a href="https://t.me/maikl_great" target="_blank">@maikl_great</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-instagram"></i> <a href="https://www.instagram.com/maikl_great?igsh=MWRrdXFsbTZkYno2cQ%3D%3D&utm_source=qr" target="_blank">@maikl_great</a>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fab fa-telegram"></i> <a href="https://t.me/Abnormal_masseur" target="_blank">Мой Telegram-канал</a>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-big" id="resetBtn">← Пройти разбор заново</button>
-                </div>
-            </div>
-
-            <!-- Блок доверия -->
-            <div class="trust-footer">
-                <div class="trust-badge">
-                    <i class="fas fa-certificate"></i> Диплом массажиста
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-notes-medical"></i> Медкнижка
-                </div>
-                <div class="trust-badge">
-                    <i class="fas fa-heart"></i> Аномальный подход
-                </div>
-            </div>
-        </main>
+        <div class="nav-links">
+            <a href="#services">Услуги</a>
+            <a href="#price">Цены</a>
+            <a href="#about">Обо мне</a>
+            <a href="#contacts">Контакты</a>
+        </div>
+        <div class="social-header">
+            <a href="https://t.me/Abnormal_masseur" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.instagram.com/maikl_great" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/maikl_great" target="_blank"><i class="fab fa-telegram"></i></a>
+        </div>
     </div>
+</div>
 
-    <script src="script.js"></script>
+<!-- Главный экран -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="highlight">Аномальный подход</div>
+                <h1>Твоя спина заслуживает лучшего</h1>
+                <p>Я Михаил — массажист в Шахтах. Помогаю забыть о боли, напряжении и усталости. Без скучных шаблонов, с заботой и аномальным результатом.</p>
+                <div class="hero-buttons">
+                    <a href="#analysis" class="btn btn-primary"><i class="fas fa-sparkles"></i> Бесплатный разбор</a>
+                    <a href="tel:+79281068699" class="btn btn-outline"><i class="fas fa-phone"></i> Позвонить</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-spine"></i>
+                <p>Диплом • Медкнижка • 3 техники</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Услуги и цены -->
+<section class="services" id="services">
+    <div class="container">
+        <h2 class="section-title">Услуги и цены</h2>
+        <p class="section-subtitle">Все цены указаны за сеанс. Выезд обсуждается отдельно.</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-spine"></i></div>
+                <h3>Массаж спины</h3>
+                <div class="service-price">1200 ₽ <small>/ 60 мин</small></div>
+                <p class="service-desc">Классический массаж спины: снимаем боль, зажимы, усталость. База, с которой стоит начать.</p>
+                <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Шейно-воротниковая зона</h3>
+                <div class="service-price">700 ₽ <small>/ 30 мин</small></div>
+                <p class="service-desc">Снимаем "холку", головные боли, напряжение в плечах. Идеально для офисных работников.</p>
+                <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                <h3>Лимфодренажный массаж</h3>
+                <div class="service-price">1500 ₽ <small>/ 90 мин</small></div>
+                <p class="service-desc">Убираем отеки, выводим лишнюю жидкость, дарим легкость. Мягко и эффективно.</p>
+                <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-fist-raised"></i></div>
+                <h3>Антицеллюлитный массаж</h3>
+                <div class="service-price">2000 ₽ <small>/ 60 мин</small></div>
+                <p class="service-desc">Коррекция фигуры, уменьшение объемов, улучшение тонуса кожи. Интенсивно и результативно.</p>
+                <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Блок бесплатного анализа -->
+<section class="free-analysis" id="analysis">
+    <div class="container">
+        <div class="analysis-grid">
+            <div class="analysis-content">
+                <h2>Не знаешь, что болит?</h2>
+                <p>Пройди бесплатный «Аномальный разбор» — ответь на 3 вопроса и получи персональные упражнения для снятия боли. Это бесплатно и займёт 2 минуты.</p>
+                <a href="#" class="btn btn-primary" onclick="window.location.href='/'"><i class="fas fa-stethoscope"></i> Начать разбор</a>
+            </div>
+            <div class="analysis-stats">
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">вопроса</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">минуты</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">бесплатно</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Обо мне -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="about-content">
+                <h2>Аномальный массажист Михаил</h2>
+                <p>Я не просто делаю массаж — я ищу причины боли там, где другие не смотрят. Мои результаты иногда кажутся аномальными. Диплом, медкнижка, три техники: классика, лимфодренаж, антицеллюлитный.</p>
+                <div class="badges">
+                    <div class="badge"><i class="fas fa-certificate"></i> Диплом</div>
+                    <div class="badge"><i class="fas fa-notes-medical"></i> Медкнижка</div>
+                    <div class="badge"><i class="fas fa-heart"></i> Аномалия</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Контакты -->
+<section class="contacts" id="contacts">
+    <div class="container">
+        <h2 class="section-title">Свяжись со мной</h2>
+        <p class="section-subtitle">Выбери удобный способ</p>
+
+        <div class="contacts-grid">
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Телефон</h3>
+                <a href="tel:+79281068699">+7 (928) 106-86-99</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-telegram"></i>
+                <h3>Telegram</h3>
+                <a href="https://t.me/maikl_great">@maikl_great</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-instagram"></i>
+                <h3>Instagram</h3>
+                <a href="https://www.instagram.com/maikl_great">@maikl_great</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-telegram"></i>
+                <h3>Канал</h3>
+                <a href="https://t.me/Abnormal_masseur">Аномальный массаж</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>© 2026 Аномальный массаж | Михаил</div>
+            <div class="footer-links">
+                <a href="#services">Услуги</a>
+                <a href="#about">Обо мне</a>
+                <a href="#contacts">Контакты</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://t.me/Abnormal_masseur" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/maikl_great" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/maikl_great" target="_blank"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Кнопка "Бесплатный разбор" прилипающая -->
+<div style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
+    <a href="#analysis" style="background: #1a2a3a; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; box-shadow: 0 5px 20px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px;">
+        <i class="fas fa-stethoscope"></i> Бесплатный разбор
+    </a>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
-
