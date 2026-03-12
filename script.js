@@ -97,15 +97,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
-
-    // Исправляем все ссылки "Записаться" на телефон
-    document.querySelectorAll('.service-link').forEach(link => {
-        link.href = `tel:${MY_PHONE}`;
-    });
-    
-    // Исправляем кнопку "Позвонить" в шапке
-    const callButton = document.querySelector('a[href*="youtube"]');
-    if (callButton && callButton.classList.contains('btn-outline')) {
-        callButton.href = `tel:${MY_PHONE}`;
-    }
 });
