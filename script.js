@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Обработка кнопки "Начать разбор" - теперь открывает модальное окно
+    // Обработка кнопки "Начать разбор"
     const analysisButton = document.getElementById('analysisButton');
     if (analysisButton) {
         analysisButton.addEventListener('click', function(e) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <i class="fas fa-telegram"></i>
                     <h2>Скоро здесь будет опросник!</h2>
                     <p>А пока напиши мне в Telegram — я сам всё расскажу и подберу упражнения лично для тебя.</p>
-                    <a href="${MY_TELEGRAM}" target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px;">
+                    <a href="${MY_TELEGRAM}" target="_blank" class="btn btn-primary" style="display: inline-block; margin: 10px; text-decoration: none;">
                         <i class="fab fa-telegram"></i> Написать в Telegram
                     </a>
                     <button class="btn btn-outline" onclick="this.closest('.modal').remove()">
@@ -98,6 +98,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Добавляем иконки к диплому и медкнижке в шапку (уже есть в HTML)
-    // Добавляем значок для массажа спины (уже есть в HTML)
+    // Исправляем все ссылки "Записаться" на телефон
+    document.querySelectorAll('.service-link').forEach(link => {
+        link.href = `tel:${MY_PHONE}`;
+    });
+    
+    // Исправляем кнопку "Позвонить" в шапке
+    const callButton = document.querySelector('a[href*="youtube"]');
+    if (callButton && callButton.classList.contains('btn-outline')) {
+        callButton.href = `tel:${MY_PHONE}`;
+    }
 });
