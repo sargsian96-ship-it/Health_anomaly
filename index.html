@@ -64,7 +64,11 @@
             </div>
             <div class="hero-image">
                 <i class="fas fa-spine"></i>
-                <p>Диплом • Медкнижка • 3 техники</p>
+                <div class="hero-badges">
+                    <span><i class="fas fa-certificate"></i> Диплом</span>
+                    <span><i class="fas fa-notes-medical"></i> Медкнижка</span>
+                    <span><i class="fas fa-heart"></i> Аномалия</span>
+                </div>
             </div>
         </div>
     </div>
@@ -77,6 +81,7 @@
         <p class="section-subtitle">Все цены указаны за сеанс. Выезд обсуждается отдельно.</p>
 
         <div class="services-grid">
+            <!-- Массаж спины (теперь с иконкой) -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-spine"></i></div>
                 <h3>Массаж спины</h3>
@@ -85,14 +90,25 @@
                 <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
             </div>
 
+            <!-- Новая услуга: Классический массаж 90 мин -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-user-md"></i></div>
+                <h3>Классический массаж</h3>
+                <div class="service-price">1800 ₽ <small>/ 90 мин</small></div>
+                <p class="service-desc">Полноценный массаж всего тела: от стоп до головы. Глубокое расслабление и восстановление.</p>
+                <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Шейно-воротниковая -->
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-user-nurse"></i></div>
                 <h3>Шейно-воротниковая зона</h3>
                 <div class="service-price">700 ₽ <small>/ 30 мин</small></div>
                 <p class="service-desc">Снимаем "холку", головные боли, напряжение в плечах. Идеально для офисных работников.</p>
                 <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
             </div>
 
+            <!-- Лимфодренажный -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-leaf"></i></div>
                 <h3>Лимфодренажный массаж</h3>
@@ -101,6 +117,7 @@
                 <a href="tel:+79281068699" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
             </div>
 
+            <!-- Антицеллюлитный -->
             <div class="service-card">
                 <div class="service-icon"><i class="fas fa-fist-raised"></i></div>
                 <h3>Антицеллюлитный массаж</h3>
@@ -119,7 +136,7 @@
             <div class="analysis-content">
                 <h2>Не знаешь, что болит?</h2>
                 <p>Пройди бесплатный «Аномальный разбор» — ответь на 3 вопроса и получи персональные упражнения для снятия боли. Это бесплатно и займёт 2 минуты.</p>
-                <a href="#" class="btn btn-primary" onclick="window.location.href='/'"><i class="fas fa-stethoscope"></i> Начать разбор</a>
+                <button class="btn btn-primary" id="analysisButton"><i class="fas fa-stethoscope"></i> Начать разбор</button>
             </div>
             <div class="analysis-stats">
                 <div class="stat-item">
@@ -145,6 +162,11 @@
         <div class="about-grid">
             <div class="about-image">
                 <i class="fas fa-user-circle"></i>
+                <div class="about-badges">
+                    <span><i class="fas fa-certificate"></i> Диплом</span>
+                    <span><i class="fas fa-notes-medical"></i> Медкнижка</span>
+                    <span><i class="fas fa-heart"></i> Аномалия</span>
+                </div>
             </div>
             <div class="about-content">
                 <h2>Аномальный массажист Михаил</h2>
