@@ -591,6 +591,227 @@ body {
     box-shadow: 0 15px 30px rgba(65, 88, 208, 0.6);
 }
 
+/* ===== СТИЛИ ДЛЯ ОПРОСНИКА ===== */
+.quiz-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quiz-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.quiz-header h2 {
+    font-size: 1.8rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.quiz-header p {
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.quiz-progress {
+    width: 100%;
+    height: 8px;
+    background: #e9eef2;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    width: 33%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.question {
+    display: block;
+}
+
+.question.hidden {
+    display: none;
+}
+
+.question h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.option-btn {
+    background: #f8fafc;
+    border: 1px solid #e9eef2;
+    border-radius: 12px;
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #1e293b;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.option-btn:hover {
+    background: #ffffff;
+    border-color: #4158D0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px -5px rgba(65, 88, 208, 0.3);
+}
+
+.option-btn.selected {
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    border-color: transparent;
+    color: white;
+}
+
+.option-btn.selected i {
+    color: white;
+}
+
+.option-btn i {
+    width: 24px;
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+.quiz-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.quiz-nav button {
+    flex: 1;
+    padding: 14px;
+    border-radius: 40px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-next {
+    background: #1e293b;
+    color: white;
+}
+
+.btn-next:hover {
+    background: #0f172a;
+}
+
+.btn-prev {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.btn-prev:hover {
+    background: #e2e8f0;
+}
+
+.contact-form {
+    margin-top: 30px;
+}
+
+.contact-form.hidden {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #0f172a;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #e9eef2;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4158D0;
+    box-shadow: 0 0 0 3px rgba(65, 88, 208, 0.1);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #4158D0, #C850C0);
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(65, 88, 208, 0.4);
+}
+
+.quiz-result {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.quiz-result.hidden {
+    display: none;
+}
+
+.quiz-result i {
+    font-size: 4rem;
+    color: #48bb78;
+    margin-bottom: 20px;
+}
+
+.quiz-result h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.quiz-result p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
 /* ===== МОДАЛЬНОЕ ОКНО ===== */
 .modal {
     display: none;
@@ -607,35 +828,13 @@ body {
 
 .modal-content {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 24px;
-    max-width: 400px;
+    max-width: 550px;
     width: 90%;
-    text-align: center;
     position: relative;
-}
-
-.modal-content i {
-    font-size: 3rem;
-    background: linear-gradient(135deg, #4158D0, #C850C0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 20px;
-}
-
-.modal-content h2 {
-    margin-bottom: 12px;
-    color: #0f172a;
-}
-
-.modal-content p {
-    margin-bottom: 24px;
-    color: #475569;
-}
-
-.modal-content .btn {
-    margin: 5px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .close-modal {
@@ -645,6 +844,7 @@ body {
     font-size: 1.8rem;
     cursor: pointer;
     color: #94a3b8;
+    z-index: 10;
 }
 
 .close-modal:hover {
