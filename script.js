@@ -130,35 +130,42 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                             <div class="quiz-nav">
                                 <button class="btn-prev" onclick="window.prevQuestion(2)"><i class="fas fa-arrow-left"></i> Назад</button>
-                                <button class="btn-next" onclick="window.showContactForm()">Далее <i class="fas fa-arrow-right"></i></button>
+                                <button class="btn-next" onclick="window.showResult()">Узнать результат <i class="fas fa-arrow-right"></i></button>
                             </div>
-                        </div>
-                        
-                        <!-- Форма контактов -->
-                        <div id="contactForm" class="contact-form hidden">
-                            <h3 style="margin-bottom: 20px;">Оставь контакты для результата</h3>
-                            <div class="form-group">
-                                <label>Ваше имя</label>
-                                <input type="text" id="userName" placeholder="Например: Александр">
-                            </div>
-                            <div class="form-group">
-                                <label>Номер телефона</label>
-                                <input type="tel" id="userPhone" placeholder="+7 (___) ___-__-__">
-                            </div>
-                            <button class="btn-submit" onclick="window.submitQuiz()">
-                                <i class="fas fa-paper-plane"></i> Получить разбор
-                            </button>
-                            <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #94a3b8;">
-                                <i class="fas fa-lock"></i> Конфиденциально
-                            </p>
                         </div>
                         
                         <!-- Результат -->
                         <div id="quizResult" class="quiz-result hidden">
-                            <i class="fas fa-check-circle"></i>
-                            <h3>Спасибо!</h3>
-                            <p>Скоро я свяжусь с тобой и дам персональные упражнения</p>
-                            <button class="btn-submit" onclick="window.closeModal()">Закрыть</button>
+                            <i class="fas fa-stethoscope"></i>
+                            <h3>Вот что показал разбор</h3>
+                            <div id="diagnosisText" class="result-diagnosis">
+                                <!-- Сюда подставится диагноз -->
+                            </div>
+                            
+                            <p style="margin-bottom: 20px; color: #64748b;">
+                                ⚡ Точную причину и план лечения можно определить только на сеансе
+                            </p>
+                            
+                            <div class="contact-options">
+                                <a href="tel:+79281068699" class="contact-option">
+                                    <i class="fas fa-phone"></i>
+                                    <span>Позвонить</span>
+                                    <small>+7 (928) 106-86-99</small>
+                                </a>
+                                <a href="https://t.me/maikl_great" class="contact-option" target="_blank">
+                                    <i class="fab fa-telegram"></i>
+                                    <span>Telegram</span>
+                                    <small>@maikl_great</small>
+                                </a>
+                            </div>
+                            
+                            <a href="https://t.me/Abnormal_masseur" class="cta-button" target="_blank">
+                                <i class="fab fa-telegram"></i> Мой канал с упражнениями
+                            </a>
+                            
+                            <button class="btn-submit" onclick="window.closeModal()" style="margin-top: 15px;">
+                                Закрыть
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -219,44 +226,76 @@ window.prevQuestion = function(num) {
     document.getElementById('progressBar').style.width = progress + '%';
 };
 
-window.showContactForm = function() {
+window.showResult = function() {
     // Проверка ответа на 3-й вопрос
     if (!answers.q3) {
         alert('Пожалуйста, выберите вариант');
         return;
     }
     
+    // Генерируем диагноз на основе ответов
+    const diagnosis = generateDiagnosis(answers);
+    
     document.getElementById('question3').classList.add('hidden');
-    document.getElementById('contactForm').classList.remove('hidden');
+    document.getElementById('quizResult').classList.remove('hidden');
+    document.getElementById('diagnosisText').innerHTML = diagnosis;
     document.getElementById('progressBar').style.width = '100%';
 };
 
-window.submitQuiz = function() {
-    const name = document.getElementById('userName').value.trim();
-    const phone = document.getElementById('userPhone').value.trim();
+// Генерация диагноза
+function generateDiagnosis(answers) {
+    const { q1, q2, q3 } = answers;
     
-    if (!name) {
-        alert('Введите ваше имя');
-        return;
+    let problem = '';
+    let cause = '';
+    let recommendation = '';
+    
+    // Определяем проблему по локации
+    switch(q1) {
+        case 'Шея':
+            problem = 'спазм трапециевидной мышцы и глубоких мышц шеи';
+            break;
+        case 'Плечи':
+            problem = 'перенапряжение воротниковой зоны и верхнего плечевого пояса';
+            break;
+        case 'Поясница':
+            problem = 'гипертонус мышц поясничного отдела';
+            break;
+        case 'Лопатки':
+            problem = 'зажатость грудного отдела и межлопаточной области';
+            break;
+        default:
+            problem = 'общее мышечное перенапряжение';
     }
     
-    if (!phone) {
-        alert('Введите номер телефона');
-        return;
+    // Определяем причину по роду деятельности
+    switch(q3) {
+        case 'Офис':
+            cause = 'длительное сидение за компьютером в статичной позе';
+            break;
+        case 'Физический':
+            cause = 'регулярные физические перегрузки и микротравмы';
+            break;
+        case 'Водитель':
+            cause = 'постоянная вибрация и статическое напряжение за рулём';
+            break;
+        default:
+            cause = 'нерегулярные нагрузки и отсутствие правильного восстановления';
     }
     
-    // Здесь можно отправить данные в Telegram или сохранить
-    console.log('Ответы:', answers);
-    console.log('Имя:', name);
-    console.log('Телефон:', phone);
+    // Рекомендация в зависимости от давности
+    if (q2 === 'Дни' || q2 === 'Недели') {
+        recommendation = 'Хорошо поддаётся коррекции. Достаточно 3-5 сеансов для снятия острого состояния.';
+    } else {
+        recommendation = 'Требует комплексного подхода. Рекомендую курс из 5-7 сеансов для устойчивого результата.';
+    }
     
-    // Показываем результат
-    document.getElementById('contactForm').classList.add('hidden');
-    document.getElementById('quizResult').classList.remove('hidden');
-    
-    // Отправка в Telegram (можно добавить позже)
-    // sendToTelegram(name, phone, answers);
-};
+    return `
+        <p><strong>Вероятная проблема:</strong> ${problem}</p>
+        <p><strong>Основная причина:</strong> ${cause}</p>
+        <p><strong>Рекомендация:</strong> ${recommendation}</p>
+    `;
+}
 
 window.closeModal = function() {
     const modal = document.querySelector('.modal');
