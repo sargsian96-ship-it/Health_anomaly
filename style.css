@@ -270,22 +270,6 @@ body {
     font-weight: 600;
     margin-bottom: 10px;
     color: #0f172a;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.body-part-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: #f1f5f9;
-    border-radius: 50%;
-    font-size: 1rem;
-    color: #0f172a;
-    margin-left: 8px;
 }
 
 .service-price {
@@ -357,48 +341,63 @@ body {
 .analysis-content .btn-primary {
     background: white;
     color: #0f172a;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .analysis-content .btn-primary:hover {
     background: #f1f5f9;
+    transform: translateY(-2px);
 }
 
-/* Новый красивый блок статистики */
-.stats-container {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
+/* Новый красивый блок преимуществ */
+.benefits-box {
     background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
+    padding: 40px;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.stat-card {
-    text-align: center;
+.benefits-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.benefit-text {
     flex: 1;
 }
 
-.stat-icon {
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 10px;
-    opacity: 0.9;
-}
-
-.stat-number {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: white;
-    line-height: 1;
+.benefit-text h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
     margin-bottom: 5px;
+    color: white;
 }
 
-.stat-label {
-    font-size: 0.9rem;
+.benefit-text p {
+    font-size: 0.95rem;
     opacity: 0.8;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin: 0;
+    color: white;
 }
 
 /* ===== ОБО МНЕ ===== */
@@ -681,9 +680,7 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .stats-container {
-        flex-direction: column;
-        gap: 20px;
+    .benefits-box {
         width: 100%;
     }
     
@@ -724,6 +721,12 @@ body {
     .about-badge {
         width: 100%;
         justify-content: center;
+    }
+    
+    .benefit-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
     
     .floating-button {
